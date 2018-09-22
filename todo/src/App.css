@@ -23,7 +23,7 @@
 }
 
 .todoItem {
-  width: 300px;
+  width: 500px;
   display: block;
   padding: 30px;
   background-color: #d3d3d2;
@@ -44,6 +44,12 @@
   height: 10px;
 }
 
+.delete {
+  float: right;
+  height: 34px;
+  width: 50px;
+}
+
 input[type='checkbox'] {
     -webkit-appearance:none;
     width:30px;
@@ -56,6 +62,16 @@ input[type='checkbox']:checked {
     background: #202020;
 }
 
+.x {
+   background-image: url("x.png");
+   background-size: contain;
+   height: 10px;
+   width: 10px;
+   float: right;
+   display: flex;
+   flex-shrink: 0;
+   margin-left: 5px;
+}
 
 .done {
     text-decoration: line-through;

@@ -5,12 +5,10 @@ import TodoList from './Components/todoList';
 import ItemInput from './Components/itemInput';
 
 var items = [
-    {name: 'one',
-    done: false},
-    {name: 'two',
-    done: false},
-    {name: 'three',
-    done: false}]
+  {name: 'Make React Tutorial'},
+  {name: 'Apply to HackDuke'},
+  {name: 'Get Good Egg'}
+]
 
 class App extends Component {
     constructor(props) {
@@ -22,31 +20,12 @@ class App extends Component {
     }
 
     addToItems(item) {
-        this.setState({items: this.state.items.concat(item)});
+        this.setState({items: this.state.items.concat({name: item, done: false})});
     }
 
-    toggleDone(item) {
-        var foundTodo = null;
-        for(var i = 0; i < this.state.items.length; i++) {
-            if(item.name === this.state.items[i].name) {
-                foundTodo = item;
-            }
-        }
-        foundTodo.done = !foundTodo.done;
-        this.setState({ items: this.state.items });
-    }
-
-    deleteFromItems() {
-        var collect = [];
-        for(var i = 0; i < this.state.items.length; i++) {
-            if(this.state.items[i].done === true) {
-                collect.add(this.state.items[i]);
-            }
-        }
-        for(var i = 0; i < collect.length; i++) {
-            var dex = this.state.items.indexOf(collect[i]);
-            this.setState({items: this.state.items.splice(dex, 1)});
-        }
+    deleteSelf = (name) => {
+      if (!name) { return }
+      this.setState({items: this.state.items.filter((i) => name != i.name)})
     }
 
     render() {
@@ -56,10 +35,8 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">To do list</h1>
                 </header>
-                <ItemInput addToItems={this.addToItems.bind(this)}></ItemInput>
-                <div className="App-intro">
-                    <TodoList toggle={this.toggleDone.bind(this)} delete={this.deleteFromItems.bind(this)} items={this.state.items}></TodoList>
-                </div>
+                <ItemInput addToItems={this.addToItems.bind(this)}/>
+                <TodoList deleteSelf={this.deleteSelf.bind(this)} items={this.state.items}/>
             </div>
         );
     }

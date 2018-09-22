@@ -13,6 +13,7 @@ export default class ItemInput extends React.Component {
     }
 
     handleSubmit = (event) => {
+      console.log(this.state.newItem  )
         event.preventDefault();
         this.props.addToItems(this.state.newItem);
         this.setState({newItem: ''});
