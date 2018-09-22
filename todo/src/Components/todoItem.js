@@ -1,4 +1,6 @@
-class todoItem extends React.Component {
+import React, { Component } from 'react';
+
+export default class TodoItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +19,7 @@ class todoItem extends React.Component {
                 <p>{this.state.text}</p>
                 <form>
                     <input
-                    name="isGoing"
+                    name="Completed"
                     type="checkbox"
                     checked={this.state.done}
                     onChange={this.toggleDone()} />

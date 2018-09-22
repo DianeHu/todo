@@ -1,27 +1,20 @@
-class todoItem extends React.Component {
+import React, { Component } from 'react';
+import TodoItem from './todoItem.js';
+
+export default class TodoList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: []
+            items: this.props.items
         };
     }
 
-    toggleDone() {
-        this.state.done = !this.state.done;
-    }
-
     render() {
+        console.log(this.props)
         return (
-            <div>
-                <p>{this.state.text}</p>
-                <form>
-                    <input
-                        name="isGoing"
-                        type="checkbox"
-                        checked={this.state.done}
-                        onChange={this.toggleDone()} />
-                </form>
-            </div>
+            this.state.items.map(function(item) {
+                return <TodoItem text={item}></TodoItem>
+            })
         );
     }
 }
