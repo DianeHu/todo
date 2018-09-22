@@ -8,10 +8,14 @@ export default class TodoList extends React.Component {
 
     render() {
         console.log(this.props)
-        return (
-            this.props.items.map(function(item) {
-                return <TodoItem text={item}></TodoItem>
-            })
-        );
+        return <div></div>
+        // return (
+        //     <div>
+        //         {this.props.items.map(function(item) {
+        //             return <TodoItem {...this.props}></TodoItem>
+        //         })}
+        //         <button onClick={this.props.delete.bind(this)}>Delete</button>
+        //     </div>
+        // );
     }
 }
