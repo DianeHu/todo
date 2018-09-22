@@ -13,23 +13,12 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">To do list</h1>
         </header>
-        <p className="App-intro">
+        <div className="App-intro">
           <TodoList items={items}></TodoList>
-        </p>
+        </div>
       </div>
     );
   }
 }
 
 export default App;
-
-{/*
-<div className="App">
-    <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">To do list</h1>
-    </header>
-    <p className="App-intro">
-        <todoList items={items}></todoList>
-    </p>
-</div>*/}

@@ -15,15 +15,14 @@ export default class TodoItem extends React.Component {
 
     render() {
         return (
-            <div>
-                <p>{this.state.text}</p>
-                <form>
-                    <input
-                    name="Completed"
-                    type="checkbox"
-                    checked={this.state.done}
-                    onChange={this.toggleDone()} />
-                </form>
+            <div className="todoItem">
+                <div className={"todoItem-text"}>{this.state.text}</div>
+                <input
+                className="todoItem-checkbox squaredFour"
+                name="Completed"
+                type="checkbox"
+                defaultChecked={this.state.done}
+                onChange={this.toggleDone()} />
             </div>
         );
     }

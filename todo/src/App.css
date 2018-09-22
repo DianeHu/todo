@@ -22,6 +22,44 @@
   font-size: large;
 }
 
+.todoItem {
+  width: 300px;
+  display: block;
+  padding: 30px;
+  background-color: #d3d3d2;
+  margin: 10px auto;
+  border-radius: 6px;
+  font-size: 30px;
+
+}
+
+.todoItem-text {
+  display: inline;
+}
+
+.todoItem-checkbox {
+  display: inline;
+  float: right;
+  width: 10px;
+  height: 10px;
+}
+
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+input[type='checkbox']:checked {
+    background: #202020;
+}
+
+
+.done {
+    text-decoration: line-through;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
