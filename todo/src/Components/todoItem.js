@@ -12,8 +12,8 @@ export default class TodoItem extends React.Component {
     render() {
         return (
             <div className="todoItem">
+                <button onClick={this.delete}>X</button>
                 <div className={"todoItem-text"}>{this.props.item.name}</div>
-                <div className="x" onClick={this.delete}></div>
                 <input className="todoItem-checkbox squaredFour" name="Completed" type="checkbox" defaultChecked={this.props.item.done}/>
             </div>
         );
